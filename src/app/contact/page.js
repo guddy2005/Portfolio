@@ -95,23 +95,23 @@ export default function Contact() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="lg:col-span-3 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+            className="lg:col-span-3 bg-gray-200 dark:bg-gray-900/60 backdrop-blur-xl p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="relative">
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Name" />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 bg-white dark:bg-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Name" />
                 <label htmlFor="name" className="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400">Name</label>
               </div>
               <div className="relative">
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Email" />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900  bg-white dark:bg-gray-900  dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Email" />
                 <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400">Email</label>
               </div>
               <div className="relative">
-                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Subject" />
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} required className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900  text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Subject" />
                 <label htmlFor="subject" className="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400">Subject</label>
               </div>
               <div className="relative pt-2">
-                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={4} className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Your Message" />
+                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={4} className="peer w-full bg-transparent border-b-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900  text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:border-indigo-500" placeholder="Your Message" />
                 <label htmlFor="message" className="absolute left-0 -top-3.5 text-gray-600 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400">Your Message</label>
               </div>
               <button type="submit" disabled={isSubmitting} className="w-full py-3 px-6 rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:scale-105 transform transition-transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
@@ -130,7 +130,7 @@ export default function Contact() {
             className="lg:col-span-2 space-y-8"
           >
             {contactInfo.map((info) => (
-              <a key={info.label} href={info.link} target="_blank" rel="noopener noreferrer" className="group flex items-start space-x-5 p-5 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors duration-300">
+              <a key={info.label} href={info.link} target="_blank" rel="noopener noreferrer" className="group flex items-start space-x-5 p-5 bg-gray-200 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors duration-300">
                 <div className="flex-shrink-0">{info.icon}</div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">{info.label}</h3>
