@@ -28,7 +28,7 @@ const projects = [
     description: 'An AI-powered Email Classifier tool using machine learning',
     image: '/images/emailClassifier.png',
     tags: ['Python', 'TensorFlow', 'React'],
-    link: 'https://project3.com'
+    link: 'https://email-classifier-frontend-opal.vercel.app/login'
   },
   {
     id: 4,
@@ -37,6 +37,14 @@ const projects = [
     image: '/images/Securevault.png',
     tags: ['React', 'Node.js'],
     link: 'https://transcendent-brioche-8d299e.netlify.app/'
+  },
+  {
+    id: 5,
+    title: 'SkyBae',
+    description: 'A weather app that provides real-time weather updates and forecasts for any location worldwide.',
+    image: '/images/Skybae.png',
+    tags: ['React', 'Node.js'],
+    link: 'https://skybae.vercel.app/'
   },
 ];
 
