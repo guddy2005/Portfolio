@@ -6,24 +6,32 @@ import Link from 'next/link';
 
 // Your projects data
 const projects = [
-    {
+  {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution built with Next.js and Node.js',
-    image: '/images/project1.jpg',
-    tags: ['Next.js', 'Node.js', 'MongoDB'],
-    link: 'https://project1.com'
+    title: 'ImaginAI 🎨',
+    description: 'A Full-Stack MERN AI Image Generator. Features a dark glassmorphism UI, real-time community gallery, and a fail-safe backend integration with Pollinations AI.',
+    image: '/images/demo.png', // Uses your GitHub repo image
+    tags: ['MERN Stack', 'OpenAI/Pollinations', 'Tailwind'],
+    link: 'https://imagin-ai-one.vercel.app/'
   },
   {
     id: 2,
-    title: ' Dashboard',
-    description: 'Real-time analytics dashboard for admin  to alanlyis the user visit at their website ',
+    title: 'SkySense AI ✈️',
+    description: 'An ML-powered Flight Delay Prediction engine with 83% accuracy. Uses Random Forest to predict delays in real-time.',
+    image: 'https://github.com/guddy2005/SkySense-Flight-Predictor/raw/main/SkySense/demo.png', // Uses your GitHub repo image
+    tags: ['Python', 'Streamlit', 'Scikit-Learn'],
+    link: 'https://skysense-flight-predictor.streamlit.app/'
+  },
+  {
+    id: 3,
+    title: 'Dashboard',
+    description: 'Real-time analytics dashboard for admin to analyse the user visit at their website',
     image: '/images/Dashboard.png',
     tags: ['React', 'Tailwind', 'Javascript'],
     link: 'https://admin-panel-o6ui.vercel.app/'
   },
   {
-    id: 3,
+    id: 4,
     title: 'AI Powered Email Classifier',
     description: 'An AI-powered Email Classifier tool using machine learning',
     image: '/images/emailClassifier.png',
@@ -31,7 +39,7 @@ const projects = [
     link: 'https://email-classifier-frontend-opal.vercel.app/login'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Securevault',
     description: 'Secure Vault is your encrypted fortress for effortlessly storing, managing, and accessing all your passwords.',
     image: '/images/Securevault.png',
@@ -39,7 +47,7 @@ const projects = [
     link: 'https://transcendent-brioche-8d299e.netlify.app/'
   },
   {
-    id: 5,
+    id: 6,
     title: 'SkyBae',
     description: 'A weather app that provides real-time weather updates and forecasts for any location worldwide.',
     image: '/images/Skybae.png',
