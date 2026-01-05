@@ -54,11 +54,17 @@ import {
 const SkillBubble = ({ Icon, color, size = 18 }) => {
   if (!Icon) return null;
   return (
-    <div
-      className={`p-2.5 bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/10 rounded-full ${color} shadow-md dark:shadow-[0_0_10px_rgba(255,255,255,0.1)] backdrop-blur-md hover:scale-110 transition-transform`}
+    <motion.div
+      className={`p-2.5 bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/10 rounded-full ${color} shadow-md dark:shadow-[0_0_10px_rgba(255,255,255,0.1)] backdrop-blur-md cursor-pointer`}
+      whileHover={{
+        scale: 1.5,
+        zIndex: 50,
+        boxShadow: "0 0 25px rgba(99, 102, 241, 0.6)",
+      }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       <Icon size={size} />
-    </div>
+    </motion.div>
   );
 };
 
@@ -82,6 +88,7 @@ const Orbit = ({
         height: radius * 2,
         "--light-orbit": lightOrbitColor || "rgba(99, 102, 241, 0.3)",
         "--dark-orbit": orbitColor || "rgba(99, 102, 241, 0.2)",
+        pointerEvents: "none",
       }}
     >
       {skills.map((skill, index) => {
@@ -97,6 +104,8 @@ const Orbit = ({
               left: "50%",
               top: "50%",
               transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+              pointerEvents: "auto",
+              zIndex: 10,
             }}
           >
             {/* Counter-rotation to keep icons upright */}

@@ -8,6 +8,7 @@ import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import PageTransition from "../components/animations/PageTransition";
 import Loading from "../components/ui/Loading";
 import { personalInfo } from "../lib/data";
+import useFluidCursor from "../components/ui/FluidCursor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,10 @@ export default function RootLayout({ children }) {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    useFluidCursor();
+  }, []);
+
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
@@ -51,6 +56,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${manrope.variable} ${calistoga.variable} bg-white dark:bg-gray-900 transition-colors duration-300`}
       >
+        <canvas
+          id="fluid"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            pointerEvents: "none",
+            zIndex: 9999,
+          }}
+        />
         <AnimatePresence>
           {isLoading ? (
             <motion.div key="loader" exit={{ opacity: 0 }}>
