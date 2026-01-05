@@ -3,116 +3,159 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
 }
 
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 17, 24, 39;
-  --background-end-rgb: 17, 24, 39;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 17, 24, 39;
+    --background-end-rgb: 17, 24, 39;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
-  min-height: 100vh;
-  overflow-x: hidden;
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-start-rgb));
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Smooth scrolling for the entire page */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(var(--background-start-rgb));
+    background: rgb(var(--background-start-rgb));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+    background: #888;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+    background: #666;
 }
 
 /* Animation utilities */
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in forwards;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Page transitions */
 .page-enter {
-  opacity: 0;
-  transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .page-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s, transform 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
 }
 
 .page-exit {
-  opacity: 1;
+    opacity: 1;
 }
 
 .page-exit-active {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
 }
 
 /* Hover effects for cards */
 .hover-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
 
 .hover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Custom focus styles */
 *:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
 }
 
 /* Hide focus styles if using mouse */
 *:focus:not(:focus-visible) {
-  outline: none;
+    outline: none;
 }
 
 /* Ensure buttons and interactive elements show pointer cursor */
 button,
 [role="button"],
 a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* Custom selection color */
 ::selection {
-  background-color: #3b82f6;
-  color: white;
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Glowing orbit styles for dark mode */
+.dark .orbit-glow {
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    box-shadow:
+        0 0 15px rgba(99, 102, 241, 0.3),
+        0 0 30px rgba(99, 102, 241, 0.2),
+        0 0 45px rgba(99, 102, 241, 0.1),
+        inset 0 0 15px rgba(99, 102, 241, 0.1);
+}
+
+.dark .orbit-glow-purple {
+    border-color: rgba(139, 92, 246, 0.4) !important;
+    box-shadow:
+        0 0 15px rgba(139, 92, 246, 0.3),
+        0 0 30px rgba(139, 92, 246, 0.2),
+        0 0 45px rgba(139, 92, 246, 0.1),
+        inset 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.dark .orbit-glow-violet {
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    box-shadow:
+        0 0 15px rgba(168, 85, 247, 0.3),
+        0 0 30px rgba(168, 85, 247, 0.2),
+        0 0 45px rgba(168, 85, 247, 0.1),
+        inset 0 0 15px rgba(168, 85, 247, 0.1);
+}
+
+.dark .orbit-glow-fuchsia {
+    border-color: rgba(192, 132, 252, 0.4) !important;
+    box-shadow:
+        0 0 15px rgba(192, 132, 252, 0.3),
+        0 0 30px rgba(192, 132, 252, 0.2),
+        0 0 45px rgba(192, 132, 252, 0.1),
+        inset 0 0 15px rgba(192, 132, 252, 0.1);
 }
