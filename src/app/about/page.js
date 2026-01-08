@@ -29,6 +29,7 @@ import {
   SiNumpy,
   SiPandas,
   SiScikitlearn,
+  SiWordpress,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -192,6 +193,12 @@ const skillCategories = [
         icon: SiFigma,
         color: "group-hover:text-pink-500",
         shadow: "hover:shadow-pink-500/30",
+      },
+      {
+        name: "WordPress",
+        icon: SiWordpress,
+        color: "group-hover:text-blue-600",
+        shadow: "hover:shadow-blue-600/30",
       },
     ],
   },

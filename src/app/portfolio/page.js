@@ -1,58 +1,73 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 // Your projects data
 const projects = [
   {
     id: 1,
-    title: 'ImaginAI 🎨',
-    description: 'A Full-Stack MERN AI Image Generator. Features a dark glassmorphism UI, real-time community gallery, and a fail-safe backend integration with Pollinations AI.',
-    image: '/images/demo.png', // Uses your GitHub repo image
-    tags: ['MERN Stack', 'OpenAI/Pollinations', 'Tailwind'],
-    link: 'https://imagin-ai-one.vercel.app/'
+    title: "ImaginAI 🎨",
+    description:
+      "A Full-Stack MERN AI Image Generator. Features a dark glassmorphism UI, real-time community gallery, and a fail-safe backend integration with Pollinations AI.",
+    image: "/images/demo.png", // Uses your GitHub repo image
+    tags: ["MERN Stack", "OpenAI/Pollinations", "Tailwind"],
+    link: "https://imagin-ai-one.vercel.app/",
   },
   {
     id: 2,
-    title: 'SkySense AI ✈️',
-    description: 'An ML-powered Flight Delay Prediction engine with 83% accuracy. Uses Random Forest to predict delays in real-time.',
-    image: 'https://github.com/guddy2005/SkySense-Flight-Predictor/raw/main/SkySense/demo.png', // Uses your GitHub repo image
-    tags: ['Python', 'Streamlit', 'Scikit-Learn'],
-    link: 'https://skysense-flight-predictor.streamlit.app/'
+    title: "SkySense AI ✈️",
+    description:
+      "An ML-powered Flight Delay Prediction engine with 83% accuracy. Uses Random Forest to predict delays in real-time.",
+    image:
+      "https://github.com/guddy2005/SkySense-Flight-Predictor/raw/main/SkySense/demo.png", // Uses your GitHub repo image
+    tags: ["Python", "Streamlit", "Scikit-Learn"],
+    link: "https://skysense-flight-predictor.streamlit.app/",
   },
   {
     id: 3,
-    title: 'Dashboard',
-    description: 'Real-time analytics dashboard for admin to analyse the user visit at their website',
-    image: '/images/Dashboard.png',
-    tags: ['React', 'Tailwind', 'Javascript'],
-    link: 'https://admin-panel-o6ui.vercel.app/'
+    title: "Dashboard",
+    description:
+      "Real-time analytics dashboard for admin to analyse the user visit at their website",
+    image: "/images/Dashboard.png",
+    tags: ["React", "Tailwind", "Javascript"],
+    link: "https://admin-panel-o6ui.vercel.app/",
   },
   {
     id: 4,
-    title: 'AI Powered Email Classifier',
-    description: 'An AI-powered Email Classifier tool using machine learning',
-    image: '/images/emailClassifier.png',
-    tags: ['Python', 'TensorFlow', 'React'],
-    link: 'https://email-classifier-frontend-opal.vercel.app/login'
+    title: "AI Powered Email Classifier",
+    description: "An AI-powered Email Classifier tool using machine learning",
+    image: "/images/emailClassifier.png",
+    tags: ["Python", "TensorFlow", "React"],
+    link: "https://email-classifier-frontend-opal.vercel.app/login",
   },
   {
     id: 5,
-    title: 'Securevault',
-    description: 'Secure Vault is your encrypted fortress for effortlessly storing, managing, and accessing all your passwords.',
-    image: '/images/Securevault.png',
-    tags: ['React', 'Node.js'],
-    link: 'https://transcendent-brioche-8d299e.netlify.app/'
+    title: "Securevault",
+    description:
+      "Secure Vault is your encrypted fortress for effortlessly storing, managing, and accessing all your passwords.",
+    image: "/images/Securevault.png",
+    tags: ["React", "Node.js"],
+    link: "https://transcendent-brioche-8d299e.netlify.app/",
   },
   {
     id: 6,
-    title: 'SkyBae',
-    description: 'A weather app that provides real-time weather updates and forecasts for any location worldwide.',
-    image: '/images/Skybae.png',
-    tags: ['React', 'Node.js'],
-    link: 'https://skybae.vercel.app/'
+    title: "SkyBae",
+    description:
+      "A weather app that provides real-time weather updates and forecasts for any location worldwide.",
+    image: "/images/Skybae.png",
+    tags: ["React", "Node.js"],
+    link: "https://skybae.vercel.app/",
+  },
+  {
+    id: 7,
+    title: "Swift-Cart 🍽️",
+    description:
+      "A restaurant website built with WordPress and Astra theme. Features an elegant design for showcasing menu items, online ordering, and seamless customer experience.",
+    image: "/images/swift-cart.png",
+    tags: ["WordPress", "Astra Theme", "E-Commerce"],
+    link: "https://project-ecommerce.kesug.com/",
   },
 ];
 
@@ -74,7 +89,7 @@ const cardVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -102,8 +117,8 @@ export default function Portfolio() {
             My Portfolio
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            A selection of projects that showcase my passion for creating modern,
-            functional, and beautiful web applications.
+            A selection of projects that showcase my passion for creating
+            modern, functional, and beautiful web applications.
           </p>
         </motion.div>
 
@@ -121,13 +136,18 @@ export default function Portfolio() {
               onHoverEnd={() => setHoveredId(null)}
               className="group"
             >
-              <Link href={project.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
                 <div className="h-full rounded-xl border border-gray-200/80 dark:border-gray-700/60 bg-blue-100 dark:bg-gray-800/50 backdrop-blur-lg shadow-sm hover:shadow-xl hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-300 flex flex-col overflow-hidden">
                   <div className="relative h-48 overflow-hidden">
                     <motion.div
                       initial={false}
                       animate={{ scale: hoveredId === project.id ? 1.08 : 1 }}
-                      transition={{ duration: 0.4, ease: 'easeOut' }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
                       className="h-full w-full bg-cover bg-center"
                       style={{ backgroundImage: `url(${project.image})` }}
                     />
@@ -153,7 +173,8 @@ export default function Portfolio() {
                     <div className="mt-auto pt-2 text-sm font-semibold text-indigo-600 dark:text-indigo-400">
                       View Project
                       <span className="inline-block transform group-hover:translate-x-1 transition-transform duration-200">
-                        {' '}→
+                        {" "}
+                        →
                       </span>
                     </div>
                   </div>

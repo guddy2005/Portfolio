@@ -37,6 +37,7 @@ import {
   SiRedux,
   SiNestjs,
   SiSupabase,
+  SiWordpress,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import {
@@ -158,6 +159,7 @@ export default function Home() {
     { icon: SiTensorflow, color: "text-orange-500" },
     { icon: SiNumpy, color: "text-blue-400" },
     { icon: SiFigma, color: "text-pink-500" },
+    { icon: SiWordpress, color: "text-blue-600" },
   ];
 
   return (
@@ -397,6 +399,11 @@ export default function Home() {
                   color: "text-blue-500",
                 },
                 { icon: SiFigma, name: "Figma", color: "text-pink-500" },
+                {
+                  icon: SiWordpress,
+                  name: "WordPress",
+                  color: "text-blue-600",
+                },
               ]}
             />
           </div>
